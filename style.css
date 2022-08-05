@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+}
+
+.bg {
+    background-image: url(img/img1.jpg);
+    height: 100vh;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: cyan;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.sky img {
+    height: 200px;
+
+}
+
+.sun img {
+    height: 150px;
+}
+
+.super img {
+    height: 100px;
+    display: none;
+    z-index: 3;
+}
+
+.super {
+    height: 100px;
+    position: absolute;
+    left: 50px;
+    top: 400px;
+    animation: super 10s infinite;
+}
+
+.sky {
+    animation: sky 10s alternate infinite;
+    z-index: 2;
+    position: relative;
+}
+
+.sun {
+    animation: sunny 10s alternate infinite;
+    z-index: 1;
+    position: relative;
+    left: -100px;
+    bottom: -400px;
+    max-height: 150px;
+}
+
+@keyframes super {
+    50% {
+        transform: translateX(1000px) translateY(-400px);
+    }
+
+    100% {
+        transform: translateY(200px) translateX(1100px);
+    }
+}
+
+
+@keyframes sky {
+    100% {
+        transform: translateX(-1000px);
+    }
+}
+
+@keyframes sunny {
+    50% {
+        transform: translateX(800px) translateY(-400px);
+    }
+
+    100% {
+        transform: translateX(1300px) translateY(40px);
+    }
+}
+
+.bg:hover .super>img {
+    display: block;
+}
+
+.pool img {
+    height: 100px;
+    display: none;
+}
+
+.bg:hover .pool>img {
+    display: block;
+}
+
+.pool {
+    position: relative;
+    bottom: -600px;
+    right: 160px;
+    z-index: 0;
+}
